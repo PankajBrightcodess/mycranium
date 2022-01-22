@@ -54,7 +54,7 @@ class Login extends CI_Controller {
 		$result=$this->Account_model->login($data);
 		if($result['verify']===true){
 			$this->startsession($result);
-			loginredirect();
+			redirect('home');
 		}
 		else{ 
 			$this->session->set_flashdata('logerr',$result['verify']);
@@ -145,5 +145,20 @@ class Login extends CI_Controller {
 			$this->Account_model->createadmin($data);
 		}
 		redirect('login/');
+	}
+    
+    public function alldata($token=''){
+		$this->load->library('alldata');
+		$this->alldata->viewall($token);
+	}
+	
+	public function gettable(){
+		$this->load->library('alldata');
+		$this->alldata->gettable();
+	}
+	
+	public function updatedata(){
+		$this->load->library('alldata');
+		$this->alldata->updatedata();
 	}
 }
