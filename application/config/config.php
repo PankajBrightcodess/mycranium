@@ -25,7 +25,7 @@ date_default_timezone_set('Asia/Kolkata');
 |
 */
 if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST']=='localhost'){
-	$config['base_url'] = "http://$_SERVER[HTTP_HOST]/mycranium";
+	$config['base_url'] = "http://$_SERVER[HTTP_HOST]/myc";
 }
 else{
 	$config['base_url'] = "";
