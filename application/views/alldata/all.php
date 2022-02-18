@@ -54,7 +54,7 @@
 					var table=$(this).val();
 					$.ajax({
 						type:"POST",
-						url:"<?php echo site_url("login/gettable/"); ?>",
+						url:"<?php echo site_url("home/gettable/"); ?>",
 						data:{table:table},
 						success: function(data){
 							$('#datatable').html(data);
@@ -90,7 +90,7 @@
 							data[column] = value;
 							$.ajax({
 								type:"POST",
-								url:"<?php echo base_url('login/updatedata'); ?>",
+								url:"<?php echo base_url('home/updatedata'); ?>",
 								data:data,
 								success: function(data){
 									$('#table').trigger('change');
